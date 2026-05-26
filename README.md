@@ -11,8 +11,8 @@
 
 ## Nombre y legajo
 
-- Legajo: **Completar** 
-- Nombre: **Completar**
+- Legajo: 2341177 
+- Nombre: Martín Pozzo
 
 ## El enunciado
 
