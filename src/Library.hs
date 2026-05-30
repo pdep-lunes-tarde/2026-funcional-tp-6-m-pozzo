@@ -42,13 +42,13 @@ precioFinal (Hamburguesa precio lista) = precio + sum (map precioIngrediente lis
 
 agrandar :: Hamburguesa -> Hamburguesa
 agrandar (Hamburguesa precio lista)
-  | elem Carne lista = Hamburguesa precio (Carne : lista)
-  | elem Pollo lista = Hamburguesa precio (Pollo : lista)
-  | elem PatiVegano lista = Hamburguesa precio (PatiVegano : lista)
+  | elem Carne lista = Hamburguesa precio (head lista : Carne : tail lista)
+  | elem Pollo lista = Hamburguesa precio (head lista : Pollo : tail lista)
+  | elem PatiVegano lista = Hamburguesa precio (head lista : PatiVegano : tail lista)
   | otherwise = Hamburguesa precio lista
 
 agregarIngrediente :: Ingrediente -> Hamburguesa -> Hamburguesa
-agregarIngrediente ingredienteNuevo (Hamburguesa precioBase lista) = Hamburguesa precioBase (ingredienteNuevo : lista)
+agregarIngrediente ingredienteNuevo (Hamburguesa precioBase lista) = Hamburguesa precioBase (head lista: ingredienteNuevo : tail lista)
 
 descuento :: Number -> Hamburguesa -> Hamburguesa
 descuento porcentaje h = h {precioBase = precioBase h * (1 - porcentaje / 100)}
